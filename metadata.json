@@ -1,0 +1,6 @@
+{
+  "name": "Civic Voice Landing Page",
+  "description": "A landing page for the Civic Voice app based on an Ironclad-inspired design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

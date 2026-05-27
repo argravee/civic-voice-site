@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  
+  /* Civic Voice Soft Red Palette (centered at #E64C4C) */
+  --color-red-50: #fef4f4;
+  --color-red-100: #fcebeb;
+  --color-red-200: #fcd2d2;
+  --color-red-300: #faa9a8;
+  --color-red-400: #f67c7b;
+  --color-red-500: #ef5857;
+  --color-red-600: #E64C4C;
+  --color-red-700: #c93d3d;
+  --color-red-800: #a73333;
+  --color-red-900: #8a2a2a;
+}
+

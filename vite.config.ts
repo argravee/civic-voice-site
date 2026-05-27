@@ -5,7 +5,17 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    base: '/civic-voice-site/',
     plugins: [react(), tailwindcss()],
+    build: {
+      rollupOptions: {
+        input: {
+          main: path.resolve(__dirname, 'index.html'),
+          privacy: path.resolve(__dirname, 'privacy.html'),
+          support: path.resolve(__dirname, 'support.html'),
+        },
+      },
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

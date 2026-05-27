@@ -347,7 +347,7 @@ function App() {
               exit="exit"
             >
               {/* Main Content */}
-              <main className="flex flex-col items-center pt-20 md:pt-32 px-4 pb-24">
+              <main className="flex flex-col items-center pt-10 md:pt-14 px-4 pb-16 md:pb-20">
                 <motion.div 
                   className="flex flex-col items-center"
                   variants={containerVariants}
@@ -356,7 +356,7 @@ function App() {
                 >
                   {/* Hero Eyebrow */}
                   <motion.p 
-                    className="text-[#E64C4C] font-semibold tracking-wide text-sm mb-6 uppercase"
+                    className="text-[#E64C4C] font-semibold tracking-wide text-sm mb-4 uppercase"
                     variants={itemVariants}
                   >
                     AI-Powered Civic Engagement
@@ -364,7 +364,7 @@ function App() {
 
                   {/* Hero Headline */}
                   <motion.h1 
-                    className="text-center text-[40px] leading-[1.1] md:text-6xl lg:text-[72px] font-bold tracking-tight max-w-4xl mb-8"
+                    className="text-center text-[40px] leading-[1.08] md:text-6xl lg:text-[68px] xl:text-[76px] font-bold tracking-tight max-w-6xl mb-6"
                     variants={itemVariants}
                   >
                     Follow your representatives,<br className="hidden md:block" />
@@ -373,7 +373,7 @@ function App() {
 
                   {/* Hero Subheadline */}
                   <motion.p 
-                    className="text-center text-lg md:text-xl text-slate-600 font-medium max-w-2xl mb-10 leading-relaxed px-4"
+                    className="text-center text-lg md:text-xl text-slate-600 font-medium max-w-2xl mb-8 leading-relaxed px-4"
                     variants={itemVariants}
                   >
                     Civic Voice helps you understand what your representatives are doing, track issues that matter to you, and take action when it counts.
@@ -1042,4 +1042,3 @@ function App() {
 }
 
 export default App;
-

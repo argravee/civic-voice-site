@@ -24,16 +24,28 @@ function App() {
   const [testingRole, setTestingRole] = useState('citizen');
   const [testingPlatform, setTestingPlatform] = useState('ios');
   const [testingSubmitted, setTestingSubmitted] = useState(false);
-  const [testingSubmitting, setTestingSubmitting] = useState(false);
 
   const handleTestingSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!testingEmail) return;
-    setTestingSubmitting(true);
-    setTimeout(() => {
-      setTestingSubmitting(false);
-      setTestingSubmitted(true);
-    }, 1200);
+
+    const subject = encodeURIComponent('Civic Voice Beta Testing Request');
+    const body = encodeURIComponent(
+      [
+        'Hello Civic Voice team,',
+        '',
+        'I would like to join the Civic Voice beta testing pool.',
+        '',
+        `Email: ${testingEmail}`,
+        `Civic profile: ${testingRole}`,
+        `Platform: ${testingPlatform.toUpperCase()}`,
+        '',
+        'Thank you.',
+      ].join('\n'),
+    );
+
+    window.location.href = `mailto:nasar.siddi@gmail.com?subject=${subject}&body=${body}`;
+    setTestingSubmitted(true);
   };
 
   const closeTestingModal = () => {
@@ -888,9 +900,9 @@ function App() {
                       >
                         <Check size={32} />
                       </motion.div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-2">You're in the selection pool!</h4>
+                      <h4 className="text-lg font-bold text-slate-900 mb-2">Your request is ready to send</h4>
                       <p className="text-slate-600 text-sm mb-6 leading-relaxed px-4">
-                        Thank you for applying. We are actively reviewing batches to bring on fresh, energetic users. We will email instructions to <strong>{testingEmail}</strong> if you are selected for the upcoming testing cohort.
+                        Your email app should open a prepared request addressed to <strong>nasar.siddi@gmail.com</strong>. Send that email to complete your application, and we will reply to <strong>{testingEmail}</strong> if you are selected.
                       </p>
                       
                       {/* Interactive details */}
@@ -904,8 +916,8 @@ function App() {
                           <span className="font-black text-slate-700 capitalize">{testingRole}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="font-semibold text-slate-600">Pending Code Delivery:</span>
-                          <span className="font-black text-amber-600">Queue Active</span>
+                          <span className="font-semibold text-slate-600">Request Status:</span>
+                          <span className="font-black text-amber-600">Ready to Send</span>
                         </div>
                       </div>
 
@@ -1009,25 +1021,14 @@ function App() {
                       {/* Submit Button */}
                       <motion.button
                         type="submit"
-                        disabled={testingSubmitting}
-                        className="w-full py-3.5 bg-red-600 text-white font-bold rounded-xl hover:bg-[#c93d3d] shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75"
+                        className="w-full py-3.5 bg-red-600 text-white font-bold rounded-xl hover:bg-[#c93d3d] shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
-                        {testingSubmitting ? (
-                          <span className="flex items-center gap-2">
-                            <svg className="animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
-                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                            </svg>
-                            Registering Details...
-                          </span>
-                        ) : (
-                          <span className="flex items-center gap-1.5">
-                            Submit Request to Join
-                            <ArrowRight size={16} />
-                          </span>
-                        )}
+                        <span className="flex items-center gap-1.5">
+                          Submit Request to Join
+                          <ArrowRight size={16} />
+                        </span>
                       </motion.button>
                     </motion.form>
                   )}

@@ -359,7 +359,7 @@ function App() {
               exit="exit"
             >
               {/* Main Content */}
-              <main className="flex flex-col items-center pt-10 md:pt-14 px-4 pb-16 md:pb-20">
+              <main className="flex min-h-[calc(100svh-81px)] flex-col items-center justify-center px-4 py-12 md:py-16">
                 <motion.div 
                   className="flex flex-col items-center"
                   variants={containerVariants}
@@ -371,7 +371,7 @@ function App() {
                     className="text-[#E64C4C] font-semibold tracking-wide text-sm mb-4 uppercase"
                     variants={itemVariants}
                   >
-                    AI-Powered Civic Engagement
+                    AI-Powered Summaries &amp; Context for Legislation
                   </motion.p>
 
                   {/* Hero Headline */}
